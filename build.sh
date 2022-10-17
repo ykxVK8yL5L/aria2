@@ -363,20 +363,23 @@ prepare_libssh2() {
 }
 
 build_aria2() {
-  if [ -n "${ARIA2_VER}" ]; then
-    aria2_tag="${ARIA2_VER}"
-  else
-    aria2_tag=master
-    # Check download cache whether expired
-    if [ -f "${DOWNLOADS_DIR}/aria2-${aria2_tag}.tar.gz" ]; then
-      cached_file_ts="$(stat -c '%Y' "${DOWNLOADS_DIR}/aria2-${aria2_tag}.tar.gz")"
-      current_ts="$(date +%s)"
-      if [ "$((${current_ts} - "${cached_file_ts}"))" -gt 86400 ]; then
-        echo "Delete expired aria2 archive file cache..."
-        rm -f "${DOWNLOADS_DIR}/aria2-${aria2_tag}.tar.gz"
-      fi
-    fi
-  fi
+#   if [ -n "${ARIA2_VER}" ]; then
+#     aria2_tag="${ARIA2_VER}"
+#   else
+#     aria2_tag=master
+#     # Check download cache whether expired
+#     if [ -f "${DOWNLOADS_DIR}/aria2-${aria2_tag}.tar.gz" ]; then
+#       cached_file_ts="$(stat -c '%Y' "${DOWNLOADS_DIR}/aria2-${aria2_tag}.tar.gz")"
+#       current_ts="$(date +%s)"
+#       if [ "$((${current_ts} - "${cached_file_ts}"))" -gt 86400 ]; then
+#         echo "Delete expired aria2 archive file cache..."
+#         rm -f "${DOWNLOADS_DIR}/aria2-${aria2_tag}.tar.gz"
+#       fi
+#     fi
+#   fi
+
+  aria2_tag=master
+  rm -f "${DOWNLOADS_DIR}/aria2-${aria2_tag}.tar.gz"
 
   if [ -n "${ARIA2_VER}" ]; then
     aria2_latest_url="https://github.com/ykxVK8yL5L/aria2/archive/refs/tags/1.36.0.tar.gz"
