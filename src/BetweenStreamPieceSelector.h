@@ -54,8 +54,6 @@ public:
 
 private:
   BitfieldMan* bitfieldMan_;
-  double base_;
-  size_t offsetIndex_;
 };
 
 } // namespace aria2

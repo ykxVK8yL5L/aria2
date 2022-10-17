@@ -49,17 +49,30 @@ bool BetweenStreamPieceSelector::select(size_t& index, size_t minSplitSize,
                                      const unsigned char* ignoreBitfield,
                                      size_t length)
 {
-  return bitfieldMan_->getGeomMissingUnusedIndex(
-      index, minSplitSize, ignoreBitfield, length, base_, offsetIndex_);
+
+  // size_t start = SimpleRandomizer::getInstance()->getRandomNumber(
+  //     bitfieldMan_->countBlock());
+  
+  size_t start = bitfieldMan_->countBlock();
+
+  auto rv = bitfieldMan_->getInorderMissingUnusedIndex(
+      index, start, bitfieldMan_->countBlock(), minSplitSize, ignoreBitfield,
+      length);
+  if (rv) {
+    return true;
+  }
+  rv = bitfieldMan_->getInorderMissingUnusedIndex(index, 0, start, minSplitSize,
+                                                  ignoreBitfield, length);
+  if (rv) {
+    return true;
+  }
+
+  return bitfieldMan_->getInorderMissingUnusedIndex(index, minSplitSize,
+                                                    ignoreBitfield, length);
 }
 
 void BetweenStreamPieceSelector::onBitfieldInit()
 {
-  size_t index;
-  bool r = bitfieldMan_->getFirstMissingIndex(index);
-  if (r) {
-    offsetIndex_ = index;
-  }
 }
 
 } // namespace aria2
