@@ -37,9 +37,8 @@
 
 namespace aria2 {
 
-BetweenStreamPieceSelector::BetweenStreamPieceSelector(BitfieldMan* bitfieldMan,
-                                                 double base)
-    : bitfieldMan_(bitfieldMan), base_(base), offsetIndex_(0)
+BetweenStreamPieceSelector::BetweenStreamPieceSelector(BitfieldMan* bitfieldMan)
+    : bitfieldMan_(bitfieldMan)
 {
 }
 
@@ -72,13 +71,9 @@ bool BetweenStreamPieceSelector::select(size_t& index, size_t minSplitSize,
   if (rv) {
     return true;
   }
-
   return bitfieldMan_->getInorderMissingUnusedIndex(index, minSplitSize,
                                                     ignoreBitfield, length);
 }
-
-void BetweenStreamPieceSelector::onBitfieldInit()
-{
-}
+void BetweenStreamPieceSelector::onBitfieldInit(){}
 
 } // namespace aria2

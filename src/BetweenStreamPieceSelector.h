@@ -43,7 +43,7 @@ class BitfieldMan;
 
 class BetweenStreamPieceSelector : public StreamPieceSelector {
 public:
-  BetweenStreamPieceSelector(BitfieldMan* bitfieldMan, double base);
+  BetweenStreamPieceSelector(BitfieldMan* bitfieldMan);
   virtual ~BetweenStreamPieceSelector();
 
   virtual bool select(size_t& index, size_t minSplitSize,

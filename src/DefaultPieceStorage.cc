@@ -115,7 +115,7 @@ DefaultPieceStorage::DefaultPieceStorage(
   }
    else if (pieceSelectorOpt == A2_V_BETWEEN) {
     streamPieceSelector_ =
-        make_unique<BetweenStreamPieceSelector>(bitfieldMan_.get(), 1.5);
+        make_unique<BetweenStreamPieceSelector>(bitfieldMan_.get());
   }
 }
 
