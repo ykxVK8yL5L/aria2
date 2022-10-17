@@ -53,13 +53,6 @@ bool BetweenStreamPieceSelector::select(size_t& index, size_t minSplitSize,
   //     bitfieldMan_->countBlock());
 
   size_t start = bitfieldMan_->countBlock();
-
-
-  print(index);
-  print(start);
-
-
-
   auto rv = bitfieldMan_->getInorderMissingUnusedIndex(
       index, start, bitfieldMan_->countBlock(), minSplitSize, ignoreBitfield,
       length);
