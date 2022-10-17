@@ -379,9 +379,9 @@ build_aria2() {
   fi
 
   if [ -n "${ARIA2_VER}" ]; then
-    aria2_latest_url="https://github.com/ykxVK8yL5L/aria2/archive/refs/heads/master.tar.gz"
+    aria2_latest_url="https://github.com/ykxVK8yL5L/aria2/archive/refs/tags/1.36.0.tar.gz"
   else
-    aria2_latest_url="https://github.com/ykxVK8yL5L/aria2/archive/refs/heads/master.tar.gz"
+    aria2_latest_url="https://github.com/ykxVK8yL5L/aria2/archive/refs/tags/1.36.0.tar.gz"
   fi
   if [ x"${USE_CHINA_MIRROR}" = x1 ]; then
     aria2_latest_url="https://ghproxy.com/${aria2_latest_url}"
