@@ -37,13 +37,13 @@
 
 namespace aria2 {
 
-BetweenStreamPieceSelector::GeomStreamPieceSelector(BitfieldMan* bitfieldMan,
+BetweenStreamPieceSelector::BetweenStreamPieceSelector(BitfieldMan* bitfieldMan,
                                                  double base)
     : bitfieldMan_(bitfieldMan), base_(base), offsetIndex_(0)
 {
 }
 
-BetweenStreamPieceSelector::~GeomStreamPieceSelector() = default;
+BetweenStreamPieceSelector::~BetweenStreamPieceSelector() = default;
 
 bool BetweenStreamPieceSelector::select(size_t& index, size_t minSplitSize,
                                      const unsigned char* ignoreBitfield,
