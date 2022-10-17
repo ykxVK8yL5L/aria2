@@ -48,7 +48,7 @@ _aria2c()
             return 0
             ;;
         --stream-piece-selector)
-            COMPREPLY=( $( compgen -W 'default inorder random geom' -- "$cur" ) )
+            COMPREPLY=( $( compgen -W 'default inorder random geom between' -- "$cur" ) )
             return 0
             ;;
         --download-result)
