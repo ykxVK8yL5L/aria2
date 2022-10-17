@@ -53,14 +53,14 @@ jobs:
       fail-fast: false
       matrix:
         cross_host:
-          - arm-linux-musleabi
-          - aarch64-linux-musl
-          - mips-linux-musl
-          - mipsel-linux-musl
-          - mips64-linux-musl
+#           - arm-linux-musleabi
+#           - aarch64-linux-musl
+#           - mips-linux-musl
+#           - mipsel-linux-musl
+#           - mips64-linux-musl
           - x86_64-linux-musl
-          - x86_64-w64-mingw32
-          - i686-w64-mingw32
+#           - x86_64-w64-mingw32
+#           - i686-w64-mingw32
         use_libressl: [0, 1]
         exclude:
           - cross_host: x86_64-w64-mingw32
@@ -86,6 +86,7 @@ jobs:
             export ARIA2_VER="${GITHUB_REF#refs/*/}"
             echo "ARIA2_VER=${ARIA2_VER}" >> $GITHUB_ENV
           fi
+          chmod a+x "${GITHUB_WORKSPACE}/build.sh"
           "${GITHUB_WORKSPACE}/build.sh"
       - name: zip archiving
         env:
@@ -101,7 +102,6 @@ jobs:
           echo "ARCHIVE_NAME=${ARCHIVE_NAME}" >> $GITHUB_ENV
           zip -j9v "/tmp/${ARCHIVE_NAME}" "${GITHUB_WORKSPACE}"/aria2c*
       - name: Prerelease assets
-        if: github.event_name == 'push' || github.event_name == 'schedule'
         uses: softprops/action-gh-release@master
         with:
           files: /tmp/${{ env.ARCHIVE_NAME }}
