@@ -341,7 +341,7 @@ HTTP/FTP/SFTP Options
   reasonable default behavior because establishing connection is an
   expensive operation.  If ``inorder`` is given, aria2 selects piece
   which has minimum index. Index=0 means first of the file. This will
-  be useful to view movie while downloading it.
+  be useful to view movie while downloading it.  If ``between`` is given, aria2 selects lastest piece.
   :option:`--enable-http-pipelining` option may
   be useful to reduce re-connection overhead.  Please note that aria2
   honors
@@ -355,7 +355,7 @@ HTTP/FTP/SFTP Options
   keeps space from previously selected piece. This will reduce the
   number of establishing connection and at the same time it will
   download the beginning part of the file first. This will be useful
-  to view movie while downloading it.
+  to view movie while downloading it.If ``between`` is given,it will download the latest block.
   Default: ``default``
 
 .. option:: -t, --timeout=<SEC>
