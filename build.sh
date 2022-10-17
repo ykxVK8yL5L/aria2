@@ -394,6 +394,8 @@ build_aria2() {
   mkdir -p "/usr/src/aria2-${aria2_tag}"
   tar -zxf "${DOWNLOADS_DIR}/aria2-${aria2_tag}.tar.gz" --strip-components=1 -C "/usr/src/aria2-${aria2_tag}"
   cd "/usr/src/aria2-${aria2_tag}"
+  echo "fuck test======================"
+  ls "/usr/src/aria2-${aria2_tag}/src"
   if [ ! -f ./configure ]; then
     autoreconf -i
   fi
