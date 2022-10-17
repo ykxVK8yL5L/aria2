@@ -34,6 +34,7 @@
 /* copyright --> */
 #include "BetweenStreamPieceSelector.h"
 #include "BitfieldMan.h"
+#include "SimpleRandomizer.h"
 
 namespace aria2 {
 
@@ -51,8 +52,11 @@ bool BetweenStreamPieceSelector::select(size_t& index, size_t minSplitSize,
 
   // size_t start = SimpleRandomizer::getInstance()->getRandomNumber(
   //     bitfieldMan_->countBlock());
+    
+    
 
-  size_t start = bitfieldMan_->countBlock();
+  size_t start = bitfieldMan_->countBlock()-1-SimpleRandomizer::getInstance()->getRandomNumber(2);
+    
   auto rv = bitfieldMan_->getInorderMissingUnusedIndex(
       index, start, bitfieldMan_->countBlock(), minSplitSize, ignoreBitfield,
       length);
