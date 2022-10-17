@@ -861,7 +861,7 @@
     "                              reasonable default behaviour because\n" \
     "                              establishing connection is an expensive\n" \
     "                              operation.\n"   
-    "                              If 'between' is given,it will download the latest block.\n"     \
+    "                              If 'between' is given, it will download the latest block.\n" \
     "                              If 'inorder' is given, aria2 selects piece which\n" \
     "                              has minimum index. Index=0 means first of the\n" \
     "                              file. This will be useful to view movie while\n" \
