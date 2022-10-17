@@ -406,6 +406,7 @@ build_aria2() {
   make -j$(nproc)
   make install
   echo "- aria2: source: ${aria2_latest_url:-cached aria2}" >>"${BUILD_INFO}"
+  echo "${aria2_latest_url}"
   echo >>"${BUILD_INFO}"
 }
 
