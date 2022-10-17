@@ -107,8 +107,8 @@ jobs:
           files: /tmp/${{ env.ARCHIVE_NAME }}
           prerelease: true
           draft: false
-          tag_name: continuous
-          name: Continuous build
+          tag_name: 1.36.0
+          name: 1.36.0 build
           body_path: "${{ github.workspace }}/build_info.md"
           append_body: true
       - name: Archive packages
