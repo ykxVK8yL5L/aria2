@@ -60,6 +60,7 @@
 #include "InorderStreamPieceSelector.h"
 #include "RandomStreamPieceSelector.h"
 #include "GeomStreamPieceSelector.h"
+#include "BetweenStreamPieceSelector.h"
 #include "array_fun.h"
 #include "PieceStatMan.h"
 #include "wallclock.h"
@@ -111,6 +112,10 @@ DefaultPieceStorage::DefaultPieceStorage(
   else if (pieceSelectorOpt == A2_V_GEOM) {
     streamPieceSelector_ =
         make_unique<GeomStreamPieceSelector>(bitfieldMan_.get(), 1.5);
+  }
+   else if (pieceSelectorOpt == A2_V_BETWEEN) {
+    streamPieceSelector_ =
+        make_unique<BetweenStreamPieceSelector>(bitfieldMan_.get(), 1.5);
   }
 }
 

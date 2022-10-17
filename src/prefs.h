@@ -80,6 +80,7 @@ extern const std::string V_ALL;
 extern const std::string A2_V_FULL;
 extern const std::string A2_V_HIDE;
 extern const std::string A2_V_GEOM;
+extern const std::string A2_V_BETWEEN;
 extern const std::string V_PREALLOC;
 extern const std::string V_FALLOC;
 extern const std::string V_TRUNC;
@@ -283,7 +284,7 @@ extern PrefPtr PREF_RETRY_WAIT;
 extern PrefPtr PREF_ASYNC_DNS_SERVER;
 // value: true | false
 extern PrefPtr PREF_SHOW_CONSOLE_READOUT;
-// value: default | inorder | geom
+// value: default | inorder | geom | between
 extern PrefPtr PREF_STREAM_PIECE_SELECTOR;
 // value: true | false
 extern PrefPtr PREF_TRUNCATE_CONSOLE_READOUT;

@@ -29,6 +29,7 @@ SRCS =  \
 	BackupIPv4ConnectCommand.h BackupIPv4ConnectCommand.cc\
 	base32.cc base32.h\
 	base64.h\
+	BetweenStreamPieceSelector.cc BetweenStreamPieceSelector.h\
 	BinaryStream.h\
 	bitfield.cc bitfield.h\
 	BitfieldMan.cc BitfieldMan.h\
